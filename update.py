@@ -56,5 +56,4 @@ def push_github(g_token, filename, message):
 
 if __name__ == "__main__":
     response = request_data(filename)
-    print(response)
     g_response = push_github(g_token, filename, "Update Cov Test Data")
