@@ -34,6 +34,6 @@ jobs:
           pip install -r requirements.txt
       - name: Update Data
         env:
-          G_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          G_TOKEN: ${{ secrets.G_TOKEN }}
         run: |
           python update.py
