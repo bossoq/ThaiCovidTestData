@@ -24,13 +24,16 @@ def request_data(filename):
                 convert_date = f"{year}-{month}-{day} 00:00:00"
             except Exception:
                 convert_date = col[0]
-            record = {
-                "_id": i,
-                "Date": convert_date,
-                "Pos": int(col[1]),
-                "Total": int(col[2])
-            }
-            records.append(record)
+            try:
+                record = {
+                    "_id": i,
+                    "Date": convert_date,
+                    "Pos": int(col[1]),
+                    "Total": int(col[2])
+                }
+                records.append(record)
+            except ValueError:
+                pass
         i += 1
     response = {
         "result": {
